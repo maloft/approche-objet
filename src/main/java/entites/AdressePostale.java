@@ -2,10 +2,10 @@ package entites;
 
 public class AdressePostale {
 	
-	int numRue;
-	String libelleRue;
-	int codePostal;
-	String ville;
+	public int numRue;
+	public String libelleRue;
+	public int codePostal;
+	public String ville;
 	
 
 }
