@@ -14,14 +14,8 @@ public class ConversionNombre {
 		
 		int a = 13, b = 15;
 		
-		int max = Integer.compare(a, b); 
+		int max = Integer.max(a, b); 
 		
-		/** 
-		 * Si :
-		 * 		max = 0 alors a = b
-		 * 		max < 0 alors a < b
-		 * 		max > 0 alors a > b 
-		 */
 		
 		System.out.println(max);
 
