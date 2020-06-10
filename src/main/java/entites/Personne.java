@@ -28,7 +28,7 @@ public class Personne {
 		
 	}
 	
-	//Setters : 
+	/**Setters : */ 
 	
 	public void setNom(String nom)
 	{
@@ -46,7 +46,7 @@ public class Personne {
 	}
 	
 	
-	//Getters : 
+	/** Getters : */ 
 	
 	public String getNom()
 	{

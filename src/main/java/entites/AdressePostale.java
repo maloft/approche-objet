@@ -17,7 +17,7 @@ public class AdressePostale {
 		
 	}
 	
-	//Getters : 
+	/** Getters : */
 	
 	public int getNumRue()
 	{
@@ -37,6 +37,28 @@ public class AdressePostale {
 	public String getVille()
 	{
 		return ville;
+	}
+	
+	/** Setters : */
+	
+	public void setNumRue(int numRue)
+	{
+		this.numRue =  numRue;
+	}
+	
+	public void setLibelleRue(String libelleRue)
+	{
+		this.libelleRue = libelleRue;
+	}
+	
+	public void setCodePostal(int codePostal)
+	{
+		this.codePostal = codePostal;
+	}
+	
+	public void setVille()
+	{
+		this.ville = ville;
 	}
 	
 
