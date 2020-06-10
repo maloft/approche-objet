@@ -2,10 +2,10 @@ package entites;
 
 public class AdressePostale {
 	
-	public int numRue;
-	public String libelleRue;
-	public int codePostal;
-	public String ville;
+	private int numRue;
+	private String libelleRue;
+	private int codePostal;
+	private String ville;
 	
 	
 	public AdressePostale(int numRue_ , String libelleRue_ , int codePostal_ , String ville_)
@@ -15,6 +15,28 @@ public class AdressePostale {
 		codePostal = codePostal_;
 		ville = ville_;
 		
+	}
+	
+	//Getters : 
+	
+	public int getNumRue()
+	{
+		return numRue;
+	}
+	
+	public String getLibelleRue()
+	{
+		return libelleRue;
+	}
+	
+	public int getCodePostal()
+	{
+		return codePostal;
+	}
+	
+	public String getVille()
+	{
+		return ville;
 	}
 	
 

@@ -2,9 +2,9 @@ package entites;
 
 public class Personne {
 	
-	public String nom;
-	public String prenom;
-	public AdressePostale adr;
+	private String nom;
+	private String prenom;
+	private AdressePostale adr;
 	
 	public Personne(String nom_ , String prenom_ , AdressePostale adr_)
 	{
@@ -19,6 +19,48 @@ public class Personne {
 		nom = nom_;
 		prenom = prenom_;
 		
+	}
+	
+	public void nomMaj()
+	{
+		System.out.println( this.prenom );
+		System.out.println( this.nom.toUpperCase() );
+		
+	}
+	
+	//Setters : 
+	
+	public void setNom(String nom)
+	{
+		this.nom = nom;
+	}
+	
+	public void setPrenom(String prenom)
+	{
+		this.prenom = prenom;
+	}
+	
+	public void setAdr(AdressePostale adr)
+	{
+		this.adr = adr;
+	}
+	
+	
+	//Getters : 
+	
+	public String getNom()
+	{
+		return nom;
+	}
+	
+	public String getPrenom()
+	{
+		return prenom;
+	}
+	
+	public AdressePostale getAdr()
+	{
+		return adr;
 	}
 	
 
