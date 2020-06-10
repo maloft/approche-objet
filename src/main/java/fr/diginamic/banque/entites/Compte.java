@@ -10,5 +10,15 @@ public class Compte {
 		this.numCompte = numCompte;
 		this.solde = solde;
 	}
+	
+	public int getNumCompte()
+	{
+		return numCompte;
+	}
+	
+	public String toString() 
+	{
+		return "Le numéro de compte : " + String.valueOf(this.getNumCompte()) + "\n" + "Le solde : " + String.valueOf(this.solde);
+	}
 
 }
