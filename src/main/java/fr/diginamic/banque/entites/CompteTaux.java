@@ -7,8 +7,7 @@ public class CompteTaux extends Compte {
 	
 	public CompteTaux(String numCompte, double solde, int tauxRem) 
 	{
-		this.numCompte = numCompte;
-		this.solde = solde;
+		super(numCompte, solde);
 		this.tauxRem = tauxRem;
 	}
 	
