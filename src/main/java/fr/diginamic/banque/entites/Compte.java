@@ -2,23 +2,25 @@ package fr.diginamic.banque.entites;
 
 public class Compte {
 	
-	private int numCompte;
-	private double solde;
+	protected String numCompte;
+	protected double solde;
 	
-	public Compte(int numCompte, double solde)
+	public Compte() {}
+	
+	public Compte(String numCompte, double solde)
 	{
 		this.numCompte = numCompte;
 		this.solde = solde;
 	}
 	
-	public int getNumCompte()
+	public String getNumCompte()
 	{
 		return numCompte;
 	}
 	
 	public String toString() 
 	{
-		return "Le numéro de compte : " + String.valueOf(this.getNumCompte()) + "\n" + "Le solde : " + String.valueOf(this.solde);
+		return "Le numéro de compte : " + this.getNumCompte() + "\n" + "Le solde : " + String.valueOf(this.solde);
 	}
 
 }
