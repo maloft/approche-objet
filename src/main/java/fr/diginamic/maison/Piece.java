@@ -10,11 +10,7 @@ public abstract class Piece {
 	public Piece() {}
 	
 	/** Constructeur avec paramètres. */
-	public Piece(double superficie, int etage)
-	{
-		this.superficie = superficie; 
-		this.etage = etage;
-	}
+	public Piece(double superficie, int etage) {};
 	
 	
 	

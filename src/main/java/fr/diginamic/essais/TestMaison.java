@@ -31,7 +31,11 @@ public class TestMaison {
 		
 		System.out.println("La supérficie totale de la maison est : " + m.superficieTotale()); /** Résultat attendu : 57m2 */
 		
+		/** Test sur la méthode ajouterPiece() : */
 		
+		m.ajouterPiece(null); /** Pas d'erreur car dans la classe Maison nous avons 
+		                          utiliser la méthode ArrayList.add() qui prend en compte 
+		                          ce cas.(Peut-être) */
 
 	}
 
