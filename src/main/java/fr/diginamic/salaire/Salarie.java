@@ -20,5 +20,11 @@ public class Salarie extends Intervenant {
 		return this.salaire;
 	}
 	
+	/** Redéfinition de getStatut(). */
+	public String getStatut()
+	{
+		return "Salarié";
+	}
+	
 
 }

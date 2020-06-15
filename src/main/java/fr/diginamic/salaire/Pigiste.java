@@ -24,5 +24,11 @@ public class Pigiste extends Intervenant {
 	{
 		return nbJour * montant;
 	}
+	
+	/** Redéfinition de getStatut(). */
+	public String getStatut()
+	{
+		return "Pigiste";
+	}
 
 }
