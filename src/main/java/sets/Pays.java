@@ -1,6 +1,6 @@
 package sets;
 
-public class Pays {
+public class Pays implements Comparable<Pays> {
 	
 	private String nom;
 	private int nbHab;
@@ -42,6 +42,13 @@ public class Pays {
 		this.nom = nom;
 	}
 
+	@Override
+	public int compareTo(Pays p) {
+		int result = this.nom.compareTo(p.getNom());
+		return result;
+	}
 
+
+	
 
 }
