@@ -21,12 +21,12 @@ public class TestTri {
 		pays.add(new Pays("Russie", 126_434_660, 27900));
 		pays.add(new Pays("Inde", 1_386_249_417, 5174));
 		
-		Collections.sort(pays); //Trier les pays dans l'ordre alphabétique
+		Collections.sort(pays); //Trier les pays dans l'ordre croissant du PIB/Hab
 		
 		
 		for (Pays paysTri : pays)
 		{
-			paysTri.afficherPays(); //Affichage dans l'ordre alphabétique
+			paysTri.afficherPays(); //Affichage dans l'ordre croissant du PIB/Hab
 		}
 
 	}
