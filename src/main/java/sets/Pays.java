@@ -44,7 +44,7 @@ public class Pays implements Comparable<Pays> {
 
 	@Override
 	public int compareTo(Pays p) {
-		int result = (int)(this.pibHab - p.getPibHab());
+		int result = this.nbHab - p.getNbHab();
 		return result;
 	}
 

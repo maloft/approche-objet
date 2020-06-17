@@ -3,6 +3,8 @@ package tri;
 import java.util.ArrayList;
 import java.util.Collections;
 
+
+import tri.*;
 import sets.Pays;
 
 public class TestTri {
@@ -21,14 +23,24 @@ public class TestTri {
 		pays.add(new Pays("Russie", 126_434_660, 27900));
 		pays.add(new Pays("Inde", 1_386_249_417, 5174));
 		
-		Collections.sort(pays); //Trier les pays dans l'ordre croissant du PIB/Hab
+		Collections.sort(pays, new ComparatorPibHabitant()); //Trier les pays dans l'ordre croissant du PIB/Hab
 		
-		
-		for (Pays paysTri : pays)
+		System.out.println("Tri selon le PIB/Habitant :");
+		for (Pays paysTriPib : pays)
 		{
-			paysTri.afficherPays(); //Affichage dans l'ordre croissant du PIB/Hab
+			paysTriPib.afficherPays(); //Affichage dans l'ordre croissant du PIB/Hab
 		}
 
+		
+		Collections.sort(pays, new ComparatorHabitant()); //Trier les pays dans l'ordre croissant du nb d'habitants
+		System.out.println("Tri selon le nombre d'habitants :");
+		
+		for (Pays paysTriNbHab : pays)
+		{
+			paysTriNbHab.afficherPays(); //Affichage dans l'ordre croissant du PIB/Hab
+		}
+		
+		
 	}
 
 }
