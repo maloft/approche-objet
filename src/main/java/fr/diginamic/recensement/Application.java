@@ -54,13 +54,27 @@ public class Application {
 			
 			for (Ville v : listeVilles)
 			{
-				if (v.getNomCommune() == "Montpellier")
+				if (v.getNomCommune().equals("Montpellier"))
 				{
 					 villeRecherchee = v;
 				}
 			}
 			System.out.println(villeRecherchee);
 			
+			/*Exploitez les données dont vous disposez pour afficher 
+			*la population de tout le département de l’Hérault. */
+			
+			int pop = 0;
+			
+			for (Ville v : listeVilles)
+			{
+				if (v.getCodeDep().equals("34"))
+				{
+					pop += v.getPopulationTotale();
+				}
+			}
+			
+			System.out.println("La population totale du département de l'Hérault est : " + pop);
 							
 			} catch (IOException e) {
 			System.out.println(e.getMessage());
