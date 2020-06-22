@@ -64,16 +64,13 @@ public class Ville {
 	@Override
 	public String toString()
 	{
-		return "Les informations concernant la ville : " + "\n" +
-				"Code de la région : " + this.codeRegion + "\n" +
+		return "Code de la région : " + this.codeRegion + "\n" +
 				"Nom de la région : " + this.nomRegion + "\n" +
 				"Code du département : " + this.codeDep + "\n" +
 				"Code de la commune : " + this.codeCommune + "\n" +
 				"Nom de la commune : " + this.nomCommune + "\n" +
 				"Population totale : " + this.populationTotale;
 	}
-	
-	
 	
 	
 	

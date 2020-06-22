@@ -3,12 +3,10 @@ package fr.diginamic.recensement;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 import org.apache.commons.io.FileUtils;
 
-import sets.Pays;
 
 public class Application {
 	
@@ -47,6 +45,8 @@ public class Application {
 										codeCommune, nomCommune, populationTotale));
 				
 				}
+			///////////////////////////////////// Etape 2 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+			
 			
 			//Recherche de la ville de Montpellier et affichage de ses informations :
 			
@@ -61,20 +61,40 @@ public class Application {
 			}
 			System.out.println(villeRecherchee);
 			
+			///////////////////////////////////// Etape 3 & 4 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+			
 			/*Exploitez les données dont vous disposez pour afficher 
 			*la population de tout le département de l’Hérault. */
 			
 			int pop = 0;
+			ArrayList<Ville> villesHerault = new ArrayList<Ville>();
 			
 			for (Ville v : listeVilles)
 			{
 				if (v.getCodeDep().equals("34"))
 				{
+					villesHerault.add(v);
 					pop += v.getPopulationTotale();
 				}
 			}
+			System.out.println("La population totale de l'Hérault est : " + pop);
 			
-			System.out.println("La population totale du département de l'Hérault est : " + pop);
+			///////////////////////////////////// Etape 5 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+			
+			//Recherche de la plus petite ville du département : 
+			int popMin = Integer.MAX_VALUE;
+			Ville villeMin = villesHerault.iterator().next();
+			for (Ville v : villesHerault)
+			{
+				if (v.getPopulationTotale() < popMin)
+				{
+					popMin = v.getPopulationTotale();
+					villeMin = v;
+				}
+			}
+			System.out.println("La plus petite ville de l'hérault :");
+			System.out.println(villeMin);
+			
 							
 			} catch (IOException e) {
 			System.out.println(e.getMessage());
