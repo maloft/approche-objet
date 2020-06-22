@@ -1,5 +1,6 @@
 package fr.diginamic.recensement;
 
+
 /**
  * Cette classe nous permet de créer un objet Ville qui représente une ville avec 
  * toutes les données qui lui correspondent
@@ -17,7 +18,8 @@ public class Ville {
 	private String nomCommune;
 	private int populationTotale;
 	
-	
+	/**Constructeur par défaut : */
+	public Ville() {}
 	
 	/**Constructeur avec paramètres */
 	
@@ -31,6 +33,34 @@ public class Ville {
 		this.populationTotale = populationTotale;
 	}
 	
+	/** Getters */
+	
+	public String getCodeRegion()
+	{
+		return this.codeRegion;
+	}
+	
+	public String getNomRegion()
+	{
+		return this.nomRegion;
+	}
+	public String getCodeDep()
+	{
+		return this.codeDep;
+	}
+	public String getCodeCommune()
+	{
+		return this.codeCommune;
+	}
+	public String getNomCommune()
+	{
+		return this.nomCommune;
+	}
+	public int getPopulationTotale()
+	{
+		return this.populationTotale;
+	}
+	
 	@Override
 	public String toString()
 	{
@@ -42,6 +72,7 @@ public class Ville {
 				"Nom de la commune : " + this.nomCommune + "\n" +
 				"Population totale : " + this.populationTotale;
 	}
+	
 	
 	
 	

@@ -3,11 +3,17 @@ package fr.diginamic.recensement;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import org.apache.commons.io.FileUtils;
 
+import sets.Pays;
+
 public class Application {
+	
+
+
 
 	public static void main(String[] args) {
 		
@@ -42,12 +48,20 @@ public class Application {
 				
 				}
 			
-			//On vérifie si le nombre de ville correspond au nombre de lignes
-			//System.out.println("Nombre de lignes :" + lignes.size());
-			System.out.println("Nombre de ville :" + listeVilles.size()); 
+			//Recherche de la ville de Montpellier et affichage de ses informations :
 			
+			Ville villeRecherchee = listeVilles.iterator().next();
 			
-				
+			for (Ville v : listeVilles)
+			{
+				if (v.getNomCommune() == "Montpellier")
+				{
+					 villeRecherchee = v;
+				}
+			}
+			System.out.println(villeRecherchee);
+			
+							
 			} catch (IOException e) {
 			System.out.println(e.getMessage());
 			}
