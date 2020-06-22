@@ -8,7 +8,7 @@ package fr.diginamic.recensement;
  *
  */
 
-public class Ville {
+public class Ville implements Comparable<Ville> {
 	
 	/** Les données qui caractérisent une villes : */
 	private String codeRegion;
@@ -70,6 +70,15 @@ public class Ville {
 				"Code de la commune : " + this.codeCommune + "\n" +
 				"Nom de la commune : " + this.nomCommune + "\n" +
 				"Population totale : " + this.populationTotale;
+	}
+
+	
+	/** On implémente la méthode compareTo() pour pouvoire comparer la population de 
+	 * 2 objets Ville.*/
+	@Override
+	public int compareTo(Ville v) {
+		int result = - this.populationTotale + v.getPopulationTotale();
+		return result;
 	}
 	
 	

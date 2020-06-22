@@ -3,6 +3,8 @@ package fr.diginamic.recensement;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
 
 import org.apache.commons.io.FileUtils;
@@ -59,7 +61,7 @@ public class Application {
 					 villeRecherchee = v;
 				}
 			}
-			System.out.println(villeRecherchee);
+			//System.out.println(villeRecherchee);
 			
 			///////////////////////////////////// Etape 3 & 4 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 			
@@ -77,7 +79,7 @@ public class Application {
 					pop += v.getPopulationTotale();
 				}
 			}
-			System.out.println("La population totale de l'Hérault est : " + pop);
+			//System.out.println("La population totale de l'Hérault est : " + pop);
 			
 			///////////////////////////////////// Etape 5 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 			
@@ -92,8 +94,48 @@ public class Application {
 					villeMin = v;
 				}
 			}
-			System.out.println("La plus petite ville de l'hérault :");
-			System.out.println(villeMin);
+			//System.out.println("La plus petite ville de l'hérault :");
+			//System.out.println(villeMin);
+			
+			
+			/////////////////////Etape 6 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+			
+			//Affichez les 10 plus grandes villes du département de l'hérault : 
+			System.out.println("Les 10 plus grandes villes : ");
+			
+			Collections.sort(villesHerault);
+			
+			Iterator<Ville> it = villesHerault.iterator();
+			
+			int compteur = 1;
+			
+			while (it.hasNext() && compteur < 11)
+			{
+				
+				Ville villeTop10 = it.next();
+				System.out.println("En " + compteur + "eme place : \n" + villeTop10);
+				compteur++;
+				
+			}
+			
+			//Afficher les 10 plus petites villes du département de l'hérault : 
+			System.out.println("Les 10 plus petites villes : ");
+			
+			Collections.sort(villesHerault, Collections.reverseOrder());
+			
+			Iterator<Ville> it1 = villesHerault.iterator();
+			
+			int compteur2 = 1;
+			
+			while (it1.hasNext() && compteur2 < 11)
+			{
+				
+				Ville villeTop10 = it1.next();
+				System.out.println("En " + compteur2 + "eme place : \n" + villeTop10);
+				compteur2++;
+				
+			}
+			
 			
 							
 			} catch (IOException e) {
