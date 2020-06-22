@@ -19,6 +19,10 @@ public class FusionMap {
 		
 		// Création map3
 		HashMap<Integer, String> map3 = new HashMap<Integer, String>();
+		map3.putAll(map1);
+		map3.putAll(map2);
+		
+		System.out.println(map3);
 		
 	}
 }
