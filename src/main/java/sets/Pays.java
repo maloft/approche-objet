@@ -5,6 +5,7 @@ public class Pays implements Comparable<Pays> {
 	private String nom;
 	private int nbHab;
 	private double pibHab;
+	private Continent continent;
 	
 	public Pays() {}
 	
@@ -30,6 +31,10 @@ public class Pays implements Comparable<Pays> {
 		return this.pibHab;
 	}
 	
+	public Continent getContinent()
+	{
+		return this.continent;
+	}
 	public void afficherPays()
 	{
 		System.out.println("Nom : " + this.nom);
@@ -41,11 +46,21 @@ public class Pays implements Comparable<Pays> {
 	{
 		this.nom = nom;
 	}
+	
+	public void setNbHab(int nbHab)
+	{
+		this.nbHab = nbHab;
+	}
 
 	@Override
 	public int compareTo(Pays p) {
 		int result = this.nbHab - p.getNbHab();
 		return result;
+	}
+	
+	public String toString()
+	{
+		return this.nom + " , " + this.nbHab+" , "+this.pibHab + "\n";
 	}
 
 
