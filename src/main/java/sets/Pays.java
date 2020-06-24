@@ -9,12 +9,21 @@ public class Pays implements Comparable<Pays> {
 	
 	public Pays() {}
 	
+	public Pays(String nom, int nbHab, double pibHab, Continent continent) {
+		this.nom = nom;
+		this.nbHab = nbHab;
+		this.pibHab = pibHab;
+		this.continent = continent;
+	}
+	
 	public Pays(String nom, int nbHab, double pibHab) {
 		this.nom = nom;
 		this.nbHab = nbHab;
 		this.pibHab = pibHab;
 	}
 	
+	
+	/** Getters : */
 	public int getNbHab() 
 	{
 		return this.nbHab;
@@ -35,13 +44,9 @@ public class Pays implements Comparable<Pays> {
 	{
 		return this.continent;
 	}
-	public void afficherPays()
-	{
-		System.out.println("Nom : " + this.nom);
-		System.out.println("Nombre habitants : " + this.nbHab);
-		System.out.println("PIB/Habitant : " + this.pibHab);
-	}
 	
+	
+	/** Setters : */
 	public void setNom(String nom)
 	{
 		this.nom = nom;
@@ -51,6 +56,15 @@ public class Pays implements Comparable<Pays> {
 	{
 		this.nbHab = nbHab;
 	}
+	
+	public void setPibHab(int pibHab)
+	{
+		this.pibHab = pibHab;
+	}
+ 
+	public void setContinent(Continent continent) {
+		this.continent = continent;
+	}
 
 	@Override
 	public int compareTo(Pays p) {
@@ -58,11 +72,20 @@ public class Pays implements Comparable<Pays> {
 		return result;
 	}
 	
+	@Override
 	public String toString()
 	{
-		return this.nom + " , " + this.nbHab+" , "+this.pibHab + "\n";
+		return this.nom + " , " + this.nbHab+" , "+this.pibHab + " , " + this.continent +"\n";
 	}
-
+	
+	
+	
+	public void afficherPays()
+	{
+		System.out.println("Nom : " + this.nom);
+		System.out.println("Nombre habitants : " + this.nbHab);
+		System.out.println("PIB/Habitant : " + this.pibHab);
+	}
 
 	
 
