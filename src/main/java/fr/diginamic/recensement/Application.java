@@ -137,6 +137,24 @@ public class Application {
 			}
 			
 			
+			//////////////////////////// Etape 7 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+			
+			System.out.println("La population de toute la région Occitanie : ");
+			
+			int populationTotaleOccitanie = 0;
+			
+			for (Ville v : listeVilles)
+			{
+				if (v.getNomRegion().equals("Occitanie"))
+				{
+					populationTotaleOccitanie += v.getPopulationTotale();
+				}
+			}
+			
+			System.out.println("La population de toute la région Occitanie : " + populationTotaleOccitanie);
+			
+			
+			
 							
 			} catch (IOException e) {
 			System.out.println(e.getMessage());
