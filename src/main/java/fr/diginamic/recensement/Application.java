@@ -4,7 +4,11 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
+import java.util.Map;
+import java.util.HashMap;
 import java.util.Iterator;
+import java.util.LinkedHashMap;
 import java.util.List;
 
 import org.apache.commons.io.FileUtils;
@@ -61,7 +65,7 @@ public class Application {
 					 villeRecherchee = v;
 				}
 			}
-			//System.out.println(villeRecherchee);
+			System.out.println(villeRecherchee);
 			
 			///////////////////////////////////// Etape 3 & 4 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 			
@@ -79,7 +83,7 @@ public class Application {
 					pop += v.getPopulationTotale();
 				}
 			}
-			//System.out.println("La population totale de l'Hérault est : " + pop);
+			System.out.println("La population totale de l'Hérault est : " + pop);
 			
 			///////////////////////////////////// Etape 5 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 			
@@ -94,8 +98,8 @@ public class Application {
 					villeMin = v;
 				}
 			}
-			//System.out.println("La plus petite ville de l'hérault :");
-			//System.out.println(villeMin);
+			System.out.println("La plus petite ville de l'hérault :");
+			System.out.println(villeMin);
 			
 			
 			/////////////////////Etape 6 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -139,8 +143,6 @@ public class Application {
 			
 			//////////////////////////// Etape 7 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 			
-			System.out.println("La population de toute la région Occitanie : ");
-			
 			int populationTotaleOccitanie = 0;
 			
 			for (Ville v : listeVilles)
@@ -152,6 +154,104 @@ public class Application {
 			}
 			
 			System.out.println("La population de toute la région Occitanie : " + populationTotaleOccitanie);
+			
+			//////////////////////// Etape 8 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+			System.out.println("Les 10 plus grandes villes de Occitanie : ");
+			//Création de la liste des villes de la région Occitanie :
+			
+			ArrayList<Ville> villesOccitanie = new ArrayList<Ville>();
+			
+			for (Ville v : listeVilles)
+			{
+				if (v.getNomRegion().equals("Occitanie"))
+				{
+					villesOccitanie.add(v);
+				}
+			}
+			
+			// Tri de ces villes en fonction de leurs populations
+			
+			Collections.sort(villesOccitanie);
+			
+			Iterator<Ville> it3 = villesOccitanie.iterator();
+			
+			int compteur3 = 1;
+			
+			while (it3.hasNext() && compteur3 < 11)
+			{
+				
+				Ville villeTop10 = it3.next();
+				System.out.println("En " + compteur3 + "eme place : \n" + villeTop10);
+				compteur3++;
+				
+			}
+			
+			
+			/** On regroupe les villes de l'Occitanie en fonction de leurs codeDep 
+			* dans une map qui prend en clé le code du département et en valeur la population 
+			* totale de ce département */
+			
+			
+			Map<String, Integer> populationParDepartement = new HashMap<>();
+			
+			for (Ville v : villesOccitanie)
+			{
+				String key = v.getCodeDep();
+				if (populationParDepartement.containsKey(key))
+				{
+					Integer cpt =populationParDepartement.get(key);
+					cpt += v.getPopulationTotale();
+					
+				}
+				else 
+				{
+					populationParDepartement.put(key, v.getPopulationTotale());
+				}
+			}
+			
+			/** On trie la map en fonction de ses valeurs. 
+			 * Pour ce :
+			 * 1- on crée une liste constituée des éléments de la hashmap
+			 * 2- on trie la liste obtenue 
+			 * 3- on recopie les éléments triés de la liste dans la hashmap
+			 */
+			//On crée une ArrayList à partir de la HashMap
+			List<Map.Entry<String, Integer> > list = 
+					new ArrayList<Map.Entry<String, Integer> >(populationParDepartement.entrySet());
+		
+			//on trie la liste : 
+			Collections.sort(list, new Comparator<Map.Entry<String, Integer> >() { 
+	            public int compare(Map.Entry<String, Integer> v1,  
+	                               Map.Entry<String, Integer> v2) 
+	            { 
+	                return (v2.getValue()).compareTo(v1.getValue()); 
+	            } 
+	        });
+			
+			//On recopie les éléments triés dans la hashmap :
+			
+			//LinkedHashMap permet de garder les éléments dans l'ordre d'insertion
+			HashMap<String, Integer> hashmapTriee = new LinkedHashMap<String, Integer>(); 
+	        for (Map.Entry<String, Integer> a : list) { 
+	        	hashmapTriee.put(a.getKey(), a.getValue()); 
+	        } 
+	        
+	        //Affichage des départements de l'occitanie et leurs population :
+	        
+	        for (Map.Entry<String, Integer> en : hashmapTriee.entrySet()) { 
+	            System.out.println("CodeDep = " + en.getKey() +  
+	                          ", Population = " + en.getValue()); 
+	        }
+	        
+	        // Affichage du département le plus peuplé :
+	        
+	        Map.Entry<String, Integer> entry = hashmapTriee.entrySet().iterator().next();
+	        System.out.println("Le département le plus peuplé porte le code : " + entry.getKey());
+	        
+	        
+	        
+	        
+			
 			
 			
 			
